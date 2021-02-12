@@ -3,5 +3,21 @@ jobs:
   build:
    docker:
      - image: cimg/node:lts
-   steps:
-     - run: echo "hello world"
+#   steps:
+#     - run: echo "hello world"
+    working_directory: /tmp
+    steps:
+
+      - run:
+          name: ダミー アーティファクトの作成
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
+      - store_artifacts:
+          path: /tmp/artifa#ct-1
+          destination: arti#fact-file    
+
+      - store_artifacts:
+          path: /tmp/artifacts
