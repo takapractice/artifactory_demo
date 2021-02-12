@@ -3,10 +3,9 @@ jobs:
   build:
    docker:
      - image: cimg/node:lts
-#   steps:
-#     - run: echo "hello world"
-    working_directory: /tmp
-    steps:
+
+   working_directory: /tmp
+   steps:
 
       - run:
           name: ダミー アーティファクトの作成
