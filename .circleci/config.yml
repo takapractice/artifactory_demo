@@ -14,9 +14,12 @@ jobs:
             mkdir /tmp/artifacts;
             echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
 
-      - store_artifacts:
-          path: /tmp/artifact-1
-          destination: artifact-file    
+      - run:
+          name: jFrog CLI のインストール
+          command: curl -fL https://getcli.jfrog.io | sh
 
-      - store_artifacts:
-          path: /tmp/artifacts
+      - run:
+          name: Artifactory へのプッシュ
+          command: |
+            ./jfrog rt config --url https://takapractice.jfrog.io/artifactory/libs-release-local/ --user rock_hop_17@yahoo.co.jp --apikey AKCp8ihAxWhKiAGXNjGSq3WhL2aeAAWMjS2qMMMoZakm7eiKFPbi41obWcHbTWSMLkcgKb8Jt --interactive=false
+            ./jfrog rt u "/tmp/*.*" "libs-release-local/"
