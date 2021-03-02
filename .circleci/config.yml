@@ -21,4 +21,4 @@ jobs:
       - run:
           name: Artifactory へのプッシュ
           command: |
-            ./jfrog rt config --url https://takapractice.jfrog.io/artifactory/ --user rock_hop_17@yahoo.co.jp --apikey AKCp8ihAxWhKiAGXNjGSq3WhL2aeAAWMjS2qMMMoZakm7eiKFPbi41obWcHbTWSMLkcgKb8Jt --interactive=false
+            ./jfrog rt config --url https://taca17.jfrog.io/artifactory/ --user rockhop17g@gmail.com --apikey AKCp8ihLMCzJ3XhHSdPeFR7bRVA7YxKG6aQHCAp8bCJ4RP6HcPifzd7ro5CfUSnrV6KpJS2xR --interactive=false
